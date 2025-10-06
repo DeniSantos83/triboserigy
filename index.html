@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tribo Serigy - Banda Sergipana</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Reggae+One&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+  <div id="loader" class="loader-wrap">
+    <div class="loader-ring" aria-hidden="true">
+      <div class="loader-text">TRIBO<br>SERIGY</div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="img/logo.jpeg" alt="Tribo Serigy" class="logo-nav">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#band">Membros</a></li> 
+          <li class="nav-item"><a class="nav-link" href="#gallery">Galeria</a></li>
+          <li class="nav-item"><a class="nav-link" href="#player">Player</a></li>
+          <li class="nav-item"><a class="nav-link" href="#videos">Vídeos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero d-flex align-items-center">
+    <div class="smoke" aria-hidden="true"></div>
+
+    <div class="container text-center hero-content">
+      <img src="img/logotit.jpeg" alt="Tribo Serigy Logo" class="header-logo mb-4">
+      <h1 class="display-4 title-reggae">Tribo Serigy</h1>
+      <p class="lead subtitle">Banda sergipana | Músicas autorais | Reggae roots & moderno</p>
+
+      <div class="social-buttons mt-4">
+        <a class="btn btn-outline-light me-2" href="https://www.youtube.com/channel/UCSDTDC4qFBOsaGBIdT5eVsw" target="_blank" rel="noopener">YouTube</a>
+        <a class="btn btn-outline-light me-2" href="https://open.spotify.com/artist/0bIOs8qIULMFZbAAg478aY" target="_blank" rel="noopener">Spotify</a>
+        <a class="btn btn-outline-light" href="https://www.instagram.com/triboserigy/" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="py-5 bg-white text-dark">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2>Sobre a banda</h2>
+          <p>Tribo Serigy é uma homenagem ao bravo indio Serigy que lutou honrosamente contra os colonizadores portugueses no século XVI para defender o seu território. A banda tem a missão de passar a mensagem positiva do reggae roots e através das suas letras autorais, conscientizar a população da sua força e como ela pode ser agente transformador do mundo, abordando as temáticas: injustiça social, a resistência, o amor e a humanidade. Atualmente a nova formação da Tribo Serigy, tem como cantor e compositor Ygor Bertoldo, guitarrista Daniel Heverman, baterista Paulo Ventura, baixista João Gilberto, tecladista Moysés Campo e Percurssionista Thiago Ribeiro.  
+
+          </p>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="img/band.jpeg" alt="Tribo Serigy" class="img-fluid rounded shadow-sm">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="band" class="py-5 bg-white">
+    <div class="container text-center">
+      <h2 class="mb-5">Conheça a Tribo Serigy</h2>
+      
+      <div id="instrument-panel" class="d-flex justify-content-center flex-wrap gap-4 mb-5">
+        
+        <button class="instrument-icon active" data-member="ygor" title="Vocal">
+            <svg class="instrument-svg" viewBox="0 0 100 100">
+                <rect x="35" y="10" width="30" height="30" rx="5" fill="#C7A200"/>
+                <circle cx="50" cy="40" r="15" fill="#185C23"/>
+                <rect x="45" y="55" width="10" height="35" fill="#9B0700"/>
+            </svg>
+        </button>
+
+        <button class="instrument-icon" data-member="thiago" title="Percussão">
+            <svg class="instrument-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="35" fill="#9B0700"/>
+                <line x1="30" y1="50" x2="70" y2="50" stroke="#C7A200" stroke-width="8" stroke-linecap="round"/>
+                <line x1="50" y1="30" x2="50" y2="70" stroke="#C7A200" stroke-width="8" stroke-linecap="round"/>
+            </svg>
+        </button>
+        
+        <button class="instrument-icon" data-member="joao" title="Baixo">
+            <svg class="instrument-svg" viewBox="0 0 100 100">
+                <rect x="45" y="5" width="10" height="90" fill="#185C23" rx="5"/>
+                <rect x="25" y="80" width="50" height="10" fill="#9B0700" rx="3"/>
+                <circle cx="50" cy="85" r="5" fill="#C7A200"/>
+            </svg>
+        </button>
+
+        <button class="instrument-icon" data-member="moyses" title="Teclado">
+            <svg class="instrument-svg" viewBox="0 0 100 100">
+                <rect x="10" y="30" width="80" height="40" fill="#185C23" rx="5"/>
+                <rect x="15" y="35" width="10" height="30" fill="white"/>
+                <rect x="30" y="35" width="10" height="30" fill="white"/>
+                <rect x="45" y="35" width="10" height="30" fill="white"/>
+                <rect x="60" y="35" width="10" height="30" fill="white"/>
+                <rect x="75" y="35" width="10" height="30" fill="white"/>
+                <rect x="23" y="35" width="4" height="20" fill="#000"/>
+                <rect x="38" y="35" width="4" height="20" fill="#000"/>
+            </svg>
+        </button>
+
+        <button class="instrument-icon" data-member="daniel" title="Guitarra">
+            <svg class="instrument-svg" viewBox="0 0 100 100">
+                <circle cx="50" cy="70" r="25" fill="#9B0700"/>
+                <rect x="45" y="5" width="10" height="70" fill="#C7A200" rx="5"/>
+                <rect x="48" y="20" width="4" height="50" fill="#185C23"/>
+            </svg>
+        </button>
+
+        <button class="instrument-icon" data-member="paulo" title="Bateria">
+            <svg class="instrument-svg" viewBox="0 0 100 100">
+                <circle cx="35" cy="50" r="15" fill="#C7A200"/>
+                <circle cx="65" cy="50" r="18" fill="#185C23"/>
+                <line x1="15" y1="50" x2="85" y2="50" stroke="#9B0700" stroke-width="4" stroke-linecap="round"/>
+            </svg>
+        </button>
+      </div>
+
+      <div id="member-display" class="row justify-content-center">
+        <div class="col-lg-8 card-container"> <div id="ygor-card" class="member-card gradient-border active">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center p-4">
+                        <img src="img/ygor.jpg" class="member-photo" alt="Ygor Bertoldo">
+                    </div>
+                    <div class="col-md-7 text-start p-4">
+                        <h3 class="member-name title-reggae">Ygor Bertoldo</h3>
+                        <p class="member-role">Vocal • @ygorbertoldooficial</p>
+                        <p class="member-info">Cantor, compositor e um dos líderes do projeto Som de Calçada que é um movimento cultural de rua que incentiva os músicos da cidade Aracaju. Ygor Bertoldo é dono de uma voz diferenciada com estilo próprio.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="thiago-card" class="member-card gradient-border">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center p-4">
+                        <img src="img/thiago.jpg" class="member-photo" alt="Thiago Ribeiro">
+                    </div>
+                    <div class="col-md-7 text-start p-4">
+                        <h3 class="member-name title-reggae">Thiago Ribeiro</h3>
+                        <p class="member-role">Percussão • @othiagoribeirooficial</p>
+                        <p class="member-info">É o percussionista da banda, um dos lideres/precursores do projeto cultural de rua intitulado "Som de Calçada". Além de ser analista de suporte da instituição UNIT, Thiago é apaixonado por música, seja na produção ou na percurssão, sua referências musicais são do reggae roots.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="joao-card" class="member-card gradient-border">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center p-4">
+                        <img src="img/joao.jpg" class="member-photo" alt="João de Gilberto">
+                    </div>
+                    <div class="col-md-7 text-start p-4">
+                        <h3 class="member-name title-reggae">João de Gilberto</h3>
+                        <p class="member-role">Baixo • A fundação do nosso som</p>
+                        <p class="member-info">É gastronomo de formação, baixista e compositor da Tribo Serigy. Desde criança tinha paixão pela gastronomia e por música, principalmente o reggae jamaicano. Seu baixo e suas composições tem a referência marcante do reggae roots.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="moyses-card" class="member-card gradient-border">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center p-4">
+                        <img src="img/moyses.jpg" class="member-photo" alt="Moyses Campos">
+                    </div>
+                    <div class="col-md-7 text-start p-4">
+                        <h3 class="member-name title-reggae">Moyses Campos</h3>
+                        <p class="member-role">Tecladista • @m0ypscmp0</p>
+                        <p class="member-info">É gastronomo de formação, baixista e compositor da Tribo Serigy. Desde criança tinha paixão pela gastronomia e por música, principalmente o reggae jamaicano. Seu baixo e suas composições tem a referência marcante do reggae roots.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="daniel-card" class="member-card gradient-border">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center p-4">
+                        <img src="img/daniel.jpg" class="member-photo" alt="Daniel Heverman">
+                    </div>
+                    <div class="col-md-7 text-start p-4">
+                        <h3 class="member-name title-reggae">Daniel Heverman</h3>
+                        <p class="member-role">Guitarra • A fundação do nosso som</p>
+                        <p class="member-info">É Guitarrista da banda, tem apenas 20 anos, mas desde os 13 anos tem paixão pela guitarra. Já passou por outras bandas de rock que é a sua maior influencia musical.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="paulo-card" class="member-card gradient-border">
+                <div class="row align-items-center">
+                    <div class="col-md-5 text-center p-4">
+                        <img src="img/paulo.jpg" class="member-photo" alt="Paulo Ventura">
+                    </div>
+                    <div class="col-md-7 text-start p-4">
+                        <h3 class="member-name title-reggae">Paulo Ventura</h3>
+                        <p class="member-role">Bateria • A fundação do nosso som</p>
+                        <p class="member-info">É Guitarrista da banda, tem apenas 20 anos, mas desde os 13 anos tem paixão pela guitarra. Já passou por outras bandas de rock que é a sua maior influencia musical.</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-4 text-center">Galeria</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-3"><img src="img/img1.jpg" class="img-fluid gallery-img" alt=""></div>
+        <div class="col-6 col-md-3"><img src="img/img2.jpg" class="img-fluid gallery-img" alt=""></div>
+        <div class="col-6 col-md-3"><img src="img/img3.jpg" class="img-fluid gallery-img" alt=""></div>
+        <div class="col-6 col-md-3"><img src="img/img4.jpg" class="img-fluid gallery-img" alt=""></div>
+        <div class="col-6 col-md-3"><img src="img/img5.jpg" class="img-fluid gallery-img" alt=""></div>
+        <div class="col-6 col-md-3"><img src="img/img6.jpg" class="img-fluid gallery-img" alt=""></div>
+        <div class="col-6 col-md-3"><img src="img/img7.jpg" class="img-fluid gallery-img" alt=""></div>
+        <div class="col-6 col-md-3"><img src="img/img8.jpg" class="img-fluid gallery-img" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="player" class="py-5 text-center bg-white">
+    <div class="container">
+      <h2>Ouça no Spotify</h2>
+      <p class="text-muted">Playlist / Álbum / Artista — use o embed oficial do Spotify abaixo.</p>
+
+      <div class="ratio ratio-16x9 mt-3">
+        <iframe src="https://open.spotify.com/embed/artist/0bIOs8qIULMFZbAAg478aY" allow="encrypted-media" allowtransparency="true" frameborder="0"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2>Vídeos</h2>
+      <div class="row mt-4 g-4 justify-content-center">
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/tEtTg2YSvwA" allowfullscreen frameborder="0"></iframe>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube.com/embed/sKMEbfZiWKw?si=1CAPCKoP0gtVLVdz" allowfullscreen frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-4">Contato</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3"><input class="form-control" placeholder="Nome" /></div>
+            <div class="mb-3"><input class="form-control" placeholder="E-mail" /></div>
+            <div class="mb-3"><textarea class="form-control" rows="4" placeholder="Mensagem"></textarea></div>
+            <button class="btn btn-dark">Enviar</button>
+          </form>
+        </div>
+        <div class="col-md-6 text-center">
+          <h5>Siga nas redes</h5>
+          <div class="mt-3">
+            <a class="btn btn-outline-dark me-2" href="https://www.instagram.com/triboserigy/" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn-outline-dark me-2" href="https://www.youtube.com/channel/UCSDTDC4qFBOsaGBIdT5eVsw" target="_blank" rel="noopener">YouTube</a>
+            <a class="btn btn-outline-dark" href="https://open.spotify.com/artist/0bIOs8qIULMFZbAAg478aY" target="_blank" rel="noopener">Spotify</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center bg-dark text-light">
+    <small>© <span id="year"></span> by Deni&F — Todos os direitos reservados.</small>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
