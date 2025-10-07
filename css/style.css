@@ -1,0 +1,516 @@
+/* ============================
+   GERAL
+   ============================ */
+:root{
+  --ice: #f7f7f7;
+  --black: #000;
+  --reggae-green: #185c23;
+  --reggae-yellow: #c7a200;
+  --reggae-red: #9b0700;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: 'Reggae One', cursive;
+  background: var(--ice);
+  color: #222;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* NAV - usa a fonte Reggae One apenas nas nav-links */
+.logo-nav{ height:60px; object-fit:contain; }
+.nav-link{ font-family: 'Reggae One', cursive; 
+    color: #000000 !important; 
+    transition: color .2s; }
+.navbar { z-index: 50; }
+
+.navbar-toggler-icon {
+  background-image: none !important;
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler::before {
+  content: "\2630"; /* símbolo ☰ */
+  font-size: 1.5rem;
+  color: black; /* fica visível sobre fundo claro */
+}
+
+.navbar .container {
+  position: relative;
+}
+
+.navbar-toggler {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* NAV hover */
+.nav-link:hover{ color: var(--reggae-yellow) !important; }
+
+/* === LOGO NO HEADER === */
+.header-logo {
+  max-width: 150px;
+  border-radius: 15%;
+  border: 3px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.25),
+              0 0 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5),
+              0 0 35px rgba(0, 0, 0, 0.6);
+}
+
+
+
+
+/* ============================
+   HERO / HEADER (PRETO + SMOKE)
+   ============================ */
+.hero{
+  position:relative;
+  min-height:60vh;
+  height:75vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: var(--black); /* fundo preto para o header */
+  overflow:hidden;
+}
+
+/* camada de fumaça: utilize img/smoke.jpg
+   ela se move da direita para a esquerda animando background-position-x */
+.smoke {
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background-image: url("../img/smoke.jpg");
+  background-repeat: repeat-x;
+  background-position: 100% 50%;
+  background-size: 200% auto;
+  opacity: 0.65;
+  filter: blur(1px) contrast(110%) saturate(120%);
+  animation: smokeMove 55s linear infinite;
+}
+
+@keyframes smokeMove {
+  from { background-position-x: 100%; }
+  to   { background-position-x: 0%; }
+}
+
+/* movimento da fumaça (direita -> esquerda) */
+@keyframes smokeMove {
+  from { background-position: 100%; }
+  to   { background-position: 0%; }
+}
+
+/* Conteúdo do header fica acima da fumaça */
+.hero-content{ z-index:3; color: #fff; padding: 2rem 1rem; }
+
+/* Título estilo reggae */
+.title-reggae{
+  font-family: 'Reggae One', cursive;
+  color: #000000;
+  text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  margin-bottom: .25rem;
+  font-size: clamp(1rem, 2vw, 2rem);
+}
+.subtitle{ color: #eee; }
+
+/* botões claros no header */
+.btn-outline-light{
+  border-color: #fff;
+  color:#fff;
+}
+.btn-outline-light:hover{
+  background: linear-gradient(90deg, var(--reggae-green), var(--reggae-yellow), var(--reggae-red));
+  color:#000;
+  border-color: transparent;
+}
+
+/* ============================
+   GALERIA
+   ============================ */
+.gallery-img{
+  border-radius:10px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.gallery-img:hover{
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+/* ============================
+   SPOTIFY / VIDEOS
+   ============================ */
+.ratio iframe{ border-radius: 6px; border: none; }
+
+/* ============================
+   FOOTER
+   ============================ */
+footer{ background:#0f0f0f; color:#ddd; }
+
+/* ============================
+   LOADER (anel girando, texto parado)
+   ============================ */
+.loader-wrap{
+  position: fixed;
+  inset: 0;
+  background: #ffffff; /* toda a tela branca durante o loading */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index: 2000;
+  opacity: 1; /* Valor inicial (totalmente visível) */
+  visibility: visible; /* Valor inicial (visível) */
+  transition: opacity 0.8s ease-out, visibility 0.8s step-end; /* Transição suave de 0.8s */
+}
+
+/* Nova classe para esconder o loader */
+.loader-hide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+/* container do anel (não gira) */
+.loader-ring{
+  width:140px;
+  height:140px;
+  position:relative;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* anel colorido que gira (pseudo-elemento) */
+.loader-ring::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:50%;
+  background: conic-gradient(var(--reggae-green) 0deg, var(--reggae-yellow) 120deg, var(--reggae-red) 240deg, var(--reggae-green) 360deg);
+  animation: spin 1.6s linear infinite;
+  box-shadow:
+    0 0 0 4px #000,
+    0 0 15px rgba(0,0,0,0.8),
+    inset 0 0 8px rgba(255,255,255,0.4);
+}
+
+/* círculo branco interno (faz o “buraco” do anel) */
+.loader-ring::after{
+  content:"";
+  position:absolute;
+  left:10px; right:10px; top:10px; bottom:10px;
+  background: #fff;
+  border-radius:50%;
+  z-index:2;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* texto parado sobre o círculo branco */
+.loader-text{
+  position:relative;
+  z-index:3;
+  text-align:center;
+  color:#000;
+  font-weight:700;
+  font-size:18px;
+  line-height:1;
+}
+
+/* animação de giro (aplicada apenas ao ::before) */
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================
+   RESPONSIVO
+   ============================ */
+@media (max-width: 768px){
+  .logo-nav{ height:48px; }
+  .title-reggae{ font-size: clamp(1.6rem, 6vw, 2.4rem); }
+  .loader-ring{ width:110px; height:110px; }
+  .loader-ring::after{ left:8px; right:8px; top:8px; bottom:8px; }
+  
+  
+  /* Ajusta a altura mínima do card container em telas menores */
+  #member-display .card-container { 
+    min-height: 800px; 
+    padding: 0 1rem;
+    align-items: center;
+  }
+  
+  /* Garante que o texto dentro do card centralize em telas pequenas */
+  .member-card .col-md-5,
+  .member-card .col-md-7 {
+    text-align: center !important; /* Adiciona !important para forçar a centralização em telas pequenas */
+  }
+}
+
+
+
+/* ============================
+   NOVO: MEMBROS DA BANDA (PAINEL INTERATIVO)
+   ============================ */
+
+/* 1. ESTILO DOS ÍCONES */
+.instrument-icon {
+    width: 70px; 
+    height: 70px;
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: var(--ice); 
+    padding: 0; 
+    border-radius: 50%;
+    cursor: pointer;
+    
+    /* Ponto de partida para o efeito de borda gradiente */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-out;
+}
+
+.instrument-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+  background: #fff; /* fundo branco simples */
+  border: 1px solid; /* borda fina */
+  border-radius: 10px;
+  padding: 10px 18px;
+  cursor: pointer;
+  
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  transition: all 0.3s ease-in-out;
+}
+
+.instrument-btn i {
+  font-size: 1.2rem;
+  color: var(--reggae-red);
+}
+
+/* Efeito hover e ativo */
+.instrument-btn:hover,
+.instrument-btn.active {
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  color: var(--reggae-green);
+}
+.instrument-icon:hover {
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    transform: translateY(-2px);
+}
+
+/* 3. ÍCONE ATIVO COM BORDA GRADIENTE (Técnica Avançada de CSS) */
+.instrument-icon.active {
+    /* 1. Remove a sombra padrão para usar o gradiente */
+    box-shadow: none; 
+    
+    /* 2. Cria uma Borda Transparente para ser preenchida pelo gradiente */
+    border: 3px solid transparent; 
+    
+    /* 3. background-image tem duas camadas: Fundo (ICE) e Borda (Gradiente) */
+    background-image: linear-gradient(var(--ice), var(--ice)), 
+                      linear-gradient(to right, var(--reggae-green) 0%, var(--reggae-yellow) 50%, var(--reggae-red) 100%);
+                      
+    /* 4. Define o comportamento das camadas: a primeira (branco) vai para o conteúdo, a segunda (gradiente) vai para a borda */
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    
+    transform: scale(1.05);
+}
+/* Fim do Bloco Corrigido */
+
+/* Correção forçada da família de fonte para ícones Font Awesome */
+.instrument-icon i.fa-solid {
+    /* Garante que o ícone use a fonte Font Awesome */
+    font-family: "Font Awesome 6 Free", "Font Awesome 7 Free" !important;
+    font-weight: 900; /* Necessário para ícones 'fa-solid' */
+}
+
+/* Ícone Ativo */
+.instrument-icon.active {
+    background: linear-gradient(135deg, var(--reggae-green), var(--reggae-yellow));
+    color: white;
+    box-shadow: 0 4px 15px rgba(255, 209, 0, 0.5); 
+    transform: scale(1.05);
+}
+
+/* 2. ESTILO E FIX DE LAYOUT DOS CARDS */
+
+
+
+/* FIX CRUCIAL: Define o contexto relativo e a altura mínima */
+#member-display .card-container {
+    position: relative; /* Define o contexto para os cards absolutos */
+    min-height: 300px; /* Altura mínima para não colapsar. Ajuste este valor se o card for muito maior. */
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Card de Perfil - Estilo base e a chave para sobreposição */
+.member-card {
+  background: url("../img/smoke.jpg") center/cover no-repeat;
+    opacity: 0;
+  visibility: hidden;
+  transform: scale(0.98);
+  transition: all .5s ease-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right:0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 900px; /* evita ocupar toda a tela */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3); /* Adiciona uma sombra suave ao card */
+}
+
+/* Card Ativo (Visível) */
+#member-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#member-display .card-container {
+  position: relative;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.member-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.98);
+  transition: all 0.5s ease-out;
+  border-radius: 12px;
+}
+
+.member-card.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.member-card .row {
+  align-items: center;
+}
+
+/* NOVOS ESTILOS SOLICITADOS */
+
+/* 1. Padroniza e arredonda as fotos */
+.member-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  border-radius: 60%; /* Borda totalmente arredondada */
+  border: 4px solid #fff; /* Borda branca para destacar */
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* 2. Fundo translúcido para o texto */
+.member-card .col-md-7 {
+  /* Fundo branco com 80% de opacidade */
+  background: rgba(255, 255, 255, 0.288); 
+  border-radius: 0 12px 12px 0; /* Arredondamento apenas nas bordas do lado do texto */
+  padding: 1.5rem !important; /* Aumenta o padding interno para melhor visualização */
+}
+
+/* Opcional: Arredondamento oposto para a coluna da foto */
+.member-card .col-md-5 {
+  border-radius: 12px 0 0 12px;
+}
+/* FIM DOS NOVOS ESTILOS */
+
+
+/* Responsividade */
+@media (max-width: 992px) {
+  .member-card {
+        max-width: none; /* Garante que o max-width de 900px seja ignorado no mobile */
+        width: 95%; /* Usa 95% da largura da tela */
+        margin: 0 auto; /* Centraliza o elemento de 95% */
+    }
+  .member-card .row {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  /* Remove o arredondamento de canto e aplica em tudo quando a coluna é de 100% */
+  .member-card .col-md-5 {
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  /* Ajusta o fundo translúcido para a parte de baixo do card em telas pequenas */
+  .member-card .col-md-7 {
+  /* ... */
+  border-radius: 0 12px 12px 0; /* Arredondamento apenas nas bordas do lado do texto */
+  padding: 1.5rem !important; 
+}
+
+  .member-photo {
+    max-width: 180px;
+    margin-bottom: 0.5rem; /* Ajusta a margem */
+  }
+}
+
+@media (max-width: 768px) {
+  #member-display .card-container {
+    padding: 0 1rem;
+    margin: 0 auto;
+    min-height: 500px; /* Garante altura suficiente para o card em duas linhas */
+  }
+
+  .instrument-btn {
+    font-size: 0.9rem;
+    padding: 8px 14px;
+  }
+}
+
+/* ====================================
+   AJUSTE DE MÍDIAS (SPOTIFY)
+   ==================================== */
+
+/* Controla o tamanho do iframe no PC */
+@media (min-width: 993px) {
+  #spotify-player-wrap iframe {
+    /* Diminui a altura do player no desktop (ex: de 352px para 250px) */
+    height: 250px !important; 
+    
+    /* Opcional: Se você quiser limitar a largura ainda mais 
+    /* max-width: 600px; */ 
+  }
+  
+  /* Se você adicionou a div col-md-8 (passo 1), ela já limita a largura. 
+     Se não adicionou e o player está direto no container: */
+  /*
+  #spotify-player-wrap {
+      max-width: 650px; 
+      margin: 0 auto; 
+  }
+  */
+}
